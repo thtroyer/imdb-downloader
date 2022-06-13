@@ -14,17 +14,21 @@ Linux or Linux-like environment with the following packages installed:
 - gunzip
 
 ## Usage
-    git clone git@github.com:thtroyer/imdb-downloader.git
-    cd imdb-downloader
-    ./run.sh
+```shell
+git clone git@github.com:thtroyer/imdb-downloader.git
+cd imdb-downloader
+./run.sh
+```
 
 Open the resulting imdb.db in your favorite sqlite tool and then you can run queries like this:
-    
-    -- Show all movies/shows, ordered by highest rating first
-    SELECT *
-    FROM title_basics AS tb
-    INNER JOIN title_ratings AS tr ON tb.tconst = tr.tconst
-    ORDER BY CAST(numVotes AS number) DESC;
+
+```sql
+-- Show all movies/shows, ordered by highest rating first
+SELECT *
+FROM title_basics AS tb
+INNER JOIN title_ratings AS tr ON tb.tconst = tr.tconst
+ORDER BY CAST(numVotes AS number) DESC;
+```
 
 
 
