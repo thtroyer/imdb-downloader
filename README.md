@@ -3,7 +3,7 @@ IMDb provides a data dump for noncommercial use here: https://www.imdb.com/inter
 
 Unfortunately, the data provided is in [tsv](https://en.wikipedia.org/wiki/Tab-separated_values) format and the files are quite large and difficult to work with and join across.  
 
-This script downloads the data, extracts the files, and imports it into a sqlite database so that queries can be written against it.
+This script downloads zipped files, extracts them, and imports the data into a sqlite database so that queries can be written against it.
 
 ## Requirements
 
@@ -22,7 +22,7 @@ cd imdb-downloader
 
 Open the resulting imdb.db in your favorite sqlite tool and then you can run queries like this:
 
-```sql
+```sqlite
 -- Show all movies/shows, ordered by highest rating first
 SELECT *
 FROM title_basics AS tb
